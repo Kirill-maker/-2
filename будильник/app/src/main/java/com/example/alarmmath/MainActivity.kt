@@ -17,19 +17,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
-                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    var scheduled by remember { mutableStateOf(false) }
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        Button(onClick = {
-                            AlarmScheduler.scheduleExact(this@MainActivity, 10_000) // 10 seconds
-                            scheduled = true
-                        }) {
-                            Text("Set alarm in 10 seconds")
-                        }
-                        if (scheduled) Spacer(Modifier.height(8.dp))
-                        if (scheduled) Text("Alarm scheduled 🎉")
-                    }
-                }
+                AlarmListScreen()
             }
         }
     }

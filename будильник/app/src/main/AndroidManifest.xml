@@ -2,18 +2,28 @@
     package="com.example.alarmmath">
 
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
 
     <application
         android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
         android:label="AlarmMath"
         android:theme="@style/Theme.Material3.DayNight.NoActionBar">
 
         <activity
             android:name=".AlarmActivity"
             android:exported="false"
+            android:launchMode="singleTop"
             android:turnScreenOn="true"
-            android:showWhenLocked="true" />
+            android:showWhenLocked="true"
+            android:excludeFromRecents="true" />
 
         <activity
             android:name=".MainActivity"
@@ -28,6 +38,12 @@
             android:name=".AlarmReceiver"
             android:exported="false"
             android:directBootAware="true" />
+
+        <service
+            android:name=".AlarmService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
     </application>
 
 </manifest>
