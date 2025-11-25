@@ -1,0 +1,22 @@
+# Build outputs
+.gradle/
+build/
+app/build/
+
+# IDE
+.idea/
+*.iml
+
+# Local configuration
+local.properties
+
+# Gradle wrapper (optional, can be tracked)
+gradle-8.2-bin.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
